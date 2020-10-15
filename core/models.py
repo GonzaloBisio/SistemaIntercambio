@@ -10,6 +10,13 @@ ESTADO = [
     ('EV', 'Esperando vuelo'),
 ]
 
+TRAVEL_CHOICES = ( 
+    ("E", "Estudio"), 
+    ("C", "Cultural"), 
+    ("T", "Trabajo"), 
+ 
+) 
+
 class RegisterTraveller(models.Model):
     codigo = models.CharField(max_length=50)
     status = models.CharField(max_length=2, choices=ESTADO, default= 'No registrado')
@@ -37,3 +44,11 @@ class RegisterHost(models.Model):
     password = models.CharField(max_length=50)
     pais = models.CharField(max_length=50)
     estado = models.CharField(max_length =50)
+
+class Programa(models.Model):
+    register = models.ForeignKey('RegisterTraveller',on_delete=models.CASCADE, null=False)
+    semester = models.CharField( 
+        max_length = 20, 
+        choices = TRAVEL_CHOICES, 
+        default = '-'
+        ) 
