@@ -24,7 +24,7 @@ TRAVEL_CHOICES = (
 
 class RegisterTraveller(models.Model):
     codigo = models.CharField(max_length=50)
-    status = models.CharField(max_length=2, choices=ESTADO, default= 'No registrado')
+    status = models.CharField(max_length=2, choices=ESTADO, default= 'R')
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     edad = models.IntegerField(default=0)
@@ -41,14 +41,15 @@ class UserForm(forms.ModelForm):
 
 class RegisterHost(models.Model):
     codigo = models.CharField(max_length=50)
-    status = models.CharField(max_length=2, choices=ESTADO, default= 'No registrado')
+    status = models.CharField(max_length=2, choices=ESTADO, default= 'R')
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    edad = models.DateField()
+    edad = models.IntegerField(default=0)
     email = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     pais = models.CharField(max_length=50)
     estado = models.CharField(max_length =50)
+    disponibilidad = models.IntegerField(default=0)
 
 class Programa(models.Model):
     regist = models.ForeignKey('RegisterTraveller',on_delete=models.CASCADE, null=False)
