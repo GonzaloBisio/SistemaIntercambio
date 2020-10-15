@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(RegisterTraveller)
 admin.site.register(RegisterHost) 
 admin.site.register(Programa) 
+admin.site.register(Solicitud)
