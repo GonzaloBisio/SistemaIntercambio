@@ -1,0 +1,21 @@
+
+@font-face {
+    font-family: myFirstF;
+    src: url(fonts/Clearlight-lJlq.ttf);
+ }
+ 
+ .c_t{
+    margin-top: 0%;
+    text-align: center;
+    font-family: myFirstF;
+    font-size: 80px;
+}
+#fondo{
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg,#EE7752, #E73C7E,#23A6D5,#23D5AB);
+    background-size: 150% 170%;
+    position: relative;
+   
+}
