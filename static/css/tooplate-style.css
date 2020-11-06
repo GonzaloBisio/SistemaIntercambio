@@ -4,7 +4,7 @@ body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
-    color: white;
+    color: black;
 	overflow-x: hidden;
     min-height: 100vh;
     height: 100%;
@@ -12,7 +12,7 @@ body {
     background: #222222;
 }
 
-#preload-01 { background: url(/static/img/constructive_bg_01.jpg) no-repeat -9999px -9999px; }
+#preload-01 { background: url(/static/img/fondo1.jpg) no-repeat -9999px -9999px; }
 #preload-02 { background: url(/static/img/constructive_bg_02.jpg) no-repeat -9999px -9999px; }
 #preload-03 { background: url(/static/img/constructive_bg_03.jpg) no-repeat -9999px -9999px; }
 #preload-04 { background: url(/static/img/constructive_bg_04.jpg) no-repeat -9999px -9999px; }
