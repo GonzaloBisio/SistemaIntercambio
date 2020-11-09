@@ -22,6 +22,7 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('login/', views.login),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
