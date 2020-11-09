@@ -2,22 +2,23 @@ body{
     background: url(../img/fondo_P.jpg) no-repeat center center fixed;
     background-size: cover;
 }
-
 .main-section{
-    margin:0 auto;
-    margin-top:25%;
+    margin:0 ;
+    margin-top:35%;
     padding: 0;
 }
 
 .modal-content{
+    width: 550px ;
+    text-align: left;
     background-color: #3b4652;
     opacity: .85;
-    padding: 0 20px;
+    padding: 0 50px;
     box-shadow: 0px 0px 3px #848484;
 }
 .user-img{
     margin-top: -50px;
-    margin-bottom: 35px;
+    margin-bottom: 5px;
 }
 
 .user-img img{

@@ -26,16 +26,15 @@
                 <div class="col-12 user-img">
                     <img src="{%static 'img/user.png' %}" th:src="@{%static 'img/user.png' %}"/>
                 </div>
-                <form class="col-12" th:action="@{/login}" method="get">
-                    <div class="form-group" id="user-group">
-                        <a id="name">PERFIL</a>
-                    </div>
-                    <div class="form-group" id="contrasena-group">
-                        <input type="password" class="form-control" placeholder="Contrasena" name="password"/>
-                    </div>
-                    <a href="http://127.0.0.1:8000/" type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Volver </a>
-                </form>
-                
+
+                {% for cosas in perf %}
+                <div id="per_1">
+                    <h2> Nombre: {{cosas.nombre}}</h2>
+                    <h2> Apellido: {{cosas.apellido}}</h2>
+                    <h2> Pais: {{cosas.pais}}</h2>
+                    <h2> Email: {{cosas.email}}</h2>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

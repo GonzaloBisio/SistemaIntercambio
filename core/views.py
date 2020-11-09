@@ -30,6 +30,6 @@ def register (request):
     return render (request, "core/register.html")
     
 def perfil (request):
-    
-    return render (request, "core/perfil.html")
+    perf = RegisterTraveller.objects.all()
+    return render (request, "core/perfil.html",{'perf': perf})
 
