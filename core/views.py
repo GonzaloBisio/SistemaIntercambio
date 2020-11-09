@@ -28,3 +28,8 @@ def login (request):
 
 def register (request):
     return render (request, "core/register.html")
+    
+def perfil (request):
+    
+    return render (request, "core/perfil.html")
+

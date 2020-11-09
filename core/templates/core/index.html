@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> HTML Template</title>
+	<title> Dream Trip</title>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
 	<link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css ' %}">
@@ -44,37 +44,40 @@
 	<!-- Page Content -->
 	<div class="container-fluid tm-main">
 		<div class="row tm-main-row">
-
+			
 			<!-- Sidebar -->
+			
 			<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
-
+			
 				<button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
-
+				
 				<div class="inner">
 					<nav id="tmMainNav" class="tm-main-nav">
 						<ul>
 							<li>
+								<a onclick="perfil()" >
+									<i class=" tm-nav-fa-icon"><img style="width: 70px;" src="{%static 'img/user.png' %}" th:src="@{%static 'img/user.png' %}"/></i>
+									<span>Perfil</span>
+								</a>
+							</li>
+							<li>
 								<a href="{% static '#intro'%}" id="tmNavLink1" class="scrolly active" data-bg-img="{% static 'img/fondo1.jpg' %}" data-page="#tm-section-1">
-									<i class="fas fa-home tm-nav-fa-icon"></i>
 									<span>Introduction</span>
 								</a>
 							</li>
 							<li>
 								<a href="{% static '#products'%}" id="tmNavLink2" class="scrolly" data-bg-img="{% static 'img/constructive_bg_02.jpg' %}" data-page="#tm-section-2" data-page-type="carousel">
-									<i class="fas fa-map tm-nav-fa-icon"></i>
-									<span>Our Products</span>
+									<span>Viajes</span>
 								</a>
 							</li>							
 							<li>
 								<a href="{% static '#company'%}" class="scrolly" data-bg-img="{% static 'img/constructive_bg_03.jpg' %}" data-page="#tm-section-3">
-									<i class="fas fa-users tm-nav-fa-icon"></i>
-									<span>Our Company</span>
+									<span>Vlog</span>
 								</a>
 							</li>
 							<li>
 								<a href="{% static '#contact'%}" class="scrolly" data-bg-img="{% static 'img/constructive_bg_04.jpg' %}" data-page="#tm-section-4">
-									<i class="fas fa-comments tm-nav-fa-icon"></i>
-									<span>Contact Us</span>
+									<span>Contacto</span>
 								</a>
 							</li>
 						</ul>
@@ -84,6 +87,7 @@
 
 			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content" >
 
+				
 					<!-- section 1 -->
 					<section id="tm-section-1" class="tm-section">
 						<div class="ml-auto" >
@@ -217,6 +221,10 @@
 
 		var sidebarVisible = false;
 		var currentPageID = "#tm-section-1";
+
+		function perfil(){
+			window.location.href = "http://127.0.0.1:8000/perfil/";
+		}
 
 		// Setup Carousel
 		function setupCarousel() {
