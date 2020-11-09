@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms    
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -25,6 +26,7 @@ TRAVEL_CHOICES = (
 class RegisterTraveller(models.Model):
     codigo = models.CharField(max_length=50)
     status = models.CharField(max_length=2, choices=ESTADO, default= 'R')
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     edad = models.IntegerField(default=0)
@@ -42,6 +44,7 @@ class UserForm(forms.ModelForm):
 class RegisterHost(models.Model):
     codigo = models.CharField(max_length=50)
     status = models.CharField(max_length=2, choices=ESTADO, default= 'R')
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     edad = models.IntegerField(default=0)
