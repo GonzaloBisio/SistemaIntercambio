@@ -8,3 +8,6 @@ def index (request):
 
 def login (request):
     return render (request, "core/login.html")
+
+def register (request):
+    return render (request, "core/register.html")
