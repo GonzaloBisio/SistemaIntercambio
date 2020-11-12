@@ -72,7 +72,7 @@
 							</li>							
 							<li>
 								<a href="{% static '#company'%}" class="scrolly" data-bg-img="{% static 'img/constructive_bg_03.jpg' %}" data-page="#tm-section-3">
-									<span>Vlog</span>
+									<span>Blog</span>
 								</a>
 							</li>
 							<li>
@@ -104,12 +104,12 @@
 							<header class="mb-4"><h2 class="tm-text-shadow">Programas</h2></header>		            
 							<div class="tm-img-container">
 								<div class="tm-img-slider">
-									<a href="{% static 'img/gallery-img-01.jpg'%}" class="tm-slider-img"><img src="{% static 'img/gallery-img-01-tn.jpg'%}" alt="Image" class="img-fluid"></a>
-									<a href="{% static 'img/gallery-img-02.jpg'%}" class="tm-slider-img"><img src="{% static 'img/gallery-img-02-tn.jpg'%}" alt="Image" class="img-fluid"></a>
-									<a href="{% static 'img/gallery-img-03.jpg'%}" class="tm-slider-img"><img src="{% static 'img/gallery-img-03-tn.jpg'%}" alt="Image" class="img-fluid"></a>
-									<a href="{% static 'img/gallery-img-04.jpg'%}" class="tm-slider-img"><img src="{% static 'img/gallery-img-04-tn.jpg'%}" alt="Image" class="img-fluid"></a>
-									<a href="{% static 'img/gallery-img-05.jpg'%}" class="tm-slider-img"><img src="{% static 'img/gallery-img-05-tn.jpg'%}" alt="Image" class="img-fluid"></a>
-									<a href="{% static 'img/gallery-img-06.jpg'%}" class="tm-slider-img"><img src="{% static 'img/gallery-img-06-tn.jpg'%}" alt="Image" class="img-fluid"></a>
+									<a onclick="solicitud()" href="{% static 'img/Mexico-1.jpg'%}" class="tm-slider-img"><img src="{% static 'img/Mexico-1.jpg'%}" alt="Image" class="img-fluid"></a>
+									<a onclick="solicitud()" href="{% static 'img/Alemania-1.jpg'%}" class="tm-slider-img"><img src="{% static 'img/Alemania-1.jpg'%}" alt="Image" class="img-fluid"></a>
+									<a onclick="solicitud()" href="{% static 'img/Nzelanda-1.jpg'%}" class="tm-slider-img"><img src="{% static 'img/Nzelanda-1.jpg'%}" alt="Image" class="img-fluid"></a>
+									<a onclick="solicitud()" href="{% static 'img/Italia-1.jpg'%}" class="tm-slider-img"><img src="{% static 'img/Italia-1.jpg'%}" alt="Image" class="img-fluid"></a>
+									<a onclick="solicitud()" href="{% static 'img/EEUU-1.jpg'%}" class="tm-slider-img"><img src="{% static 'img/EEUU-1.jpg'%}" alt="Image" class="img-fluid"></a>
+									<a onclick="solicitud()" href="{% static 'img/Francia-1.jpg'%}" class="tm-slider-img"><img src="{% static 'img/Francia-1.jpg'%}" alt="Image" class="img-fluid"></a>
 								</div>
 							</div>		            		          
 						</div>       		          	
@@ -118,7 +118,7 @@
 					<!-- section 3 -->
 					<section id="tm-section-3" class="tm-section">						
 						<div class="row mb-4">
-							<header class="col-xl-12"><h2 class="tm-text-shadow">Our Company</h2></header>		
+							<header class="col-xl-12"><h2 class="tm-text-shadow">Posteos</h2></header>		
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
@@ -221,6 +221,10 @@
 
 		var sidebarVisible = false;
 		var currentPageID = "#tm-section-1";
+
+		function solicitud(){
+			window.location.href = "http://127.0.0.1:8000/solicitud/";
+		}
 
 		function perfil(){
 			window.location.href = "http://127.0.0.1:8000/perfil/";

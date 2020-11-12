@@ -28,3 +28,6 @@ def perfil (request):
     perf = RegisterTraveller.objects.all()
     return render (request, "core/perfil.html",{'perf': perf})
 
+def solicitud(request):
+    return render (request, "core/solicitud.html")
+

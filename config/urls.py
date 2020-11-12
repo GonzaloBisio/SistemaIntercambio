@@ -21,10 +21,11 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('login/', views.login),
+    path('index/', views.index),
+    path('', views.login),
     path('register/', views.register),
     path('perfil/', views.perfil),
+    path('solicitud/', views.solicitud),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
