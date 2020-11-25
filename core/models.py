@@ -30,7 +30,7 @@ class RegisterTraveller(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     edad = models.IntegerField(default=0)
-    email = models.CharField(max_length=50)
+    email = models.CharField(max_length=60, unique=True)
     password1 = models.CharField(max_length=50)
     pais = models.CharField(max_length=50)
     estado = models.CharField(max_length =50)
@@ -41,17 +41,7 @@ class UserForm(forms.ModelForm):
         fields = ['password1']
         widgets = {'password1': forms.PasswordInput(),}
 
-class RegisterHost(models.Model):
-    codigo = models.CharField(max_length=50)
-    status = models.CharField(max_length=2, choices=ESTADO, default= 'R')
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    edad = models.IntegerField(default=0)
-    email = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    pais = models.CharField(max_length=50)
-    estado = models.CharField(max_length =50)
+class RegisterHost(RegisterTraveller):
     disponibilidad = models.IntegerField(default=0)
 
 class Programa(models.Model):
@@ -63,8 +53,9 @@ class Programa(models.Model):
         )
 
 class Solicitud(models.Model):
-    regist1 = models.ForeignKey('RegisterTraveller',on_delete=models.CASCADE, null=False)
-    reg_host = models.ForeignKey('RegisterHost',on_delete=models.CASCADE, null=False)
+    Viajante = models.ForeignKey('RegisterTraveller',on_delete=models.CASCADE, null=False, related_name='%(class)s_viajante')
+    Hospedador = models.ForeignKey('RegisterHost',on_delete=models.CASCADE, null=False, related_name='%(class)s_hospedador')
+   
     estad = models.CharField( 
         max_length = 20, 
         choices = Estado_soli, 

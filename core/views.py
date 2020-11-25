@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
 from .models import *
+from .forms import UserRegisterForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
@@ -12,17 +14,18 @@ def login (request):
     return render (request, "core/login.html")
 
 def register (request):
+    context = {}
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        if form.is_vaid():
-            username = form.clean_data['username']
-            messages.sucess(request,f'Usuario {username} creado')
-            return redirect('index.html')
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} creado')
+            return redirect('index')
     else:
-        form = UserCreationForm()
-
+            form = UserRegisterForm()
     context = {'form' : form}
-    return render (request, "core/register.html")
+    return render (request, "core/register.html", context)
     
 def perfil (request):
     perf = RegisterTraveller.objects.all()
