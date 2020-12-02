@@ -1,13 +1,21 @@
-{% extends 'core/layout.html' %}
-
+{% extends "core/base.html" %}
 {% block content %}
-
-<form class="form" method="post">
-    {% csrf_token%}
-    {{form.as_p}}
-
-    <button type="submit" id="submit">Registrarse</button>
-</form>
-
-
-{% endblock %}
+    <div class="content-section">
+        <form class= "form" method="POST">
+            {% csrf_token %}
+           
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+            </fieldset>
+            {{form.as_p}}
+            <div class="form-group">
+                <button class="btn btn-outline-info" id="submit" href = "http://127.0.0.1:8000" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

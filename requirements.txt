@@ -4,3 +4,4 @@ docutils==0.16
 pytz==2020.1
 sqlparse==0.4.1
 Pillow
+django-crispy-forms
