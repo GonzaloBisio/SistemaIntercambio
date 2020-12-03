@@ -1,3 +1,5 @@
+![](https://github.com/GonzaloBisio/SistemaIntercambio/blob/main/static/img/7SJCZ09TT204MGDW.gif)
+
 # DREAM TRIP
 
 En éste proyecto, se busca hacer una red de sistemas de intercambios culturales, de viajes por profesión o por simple gusto. La idea es ser intermediarios entre el host o la persona que aloja y el viajero. Por medio de una solicitud la cual se manda al mail de la empresa, nos muestra gustos y destinos del viajero para conectarlo con su mejor destino y alojamiento.
