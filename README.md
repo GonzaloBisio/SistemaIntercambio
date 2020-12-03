@@ -25,7 +25,7 @@ Ejecutar los siguientes comandos en terminal
 ```
 git init
 
-git clone https://github.com/cettipao/ProyectoFinal.git
+git clone https://github.com/GonzaloBisio/SistemaIntercambio.git
 ```
 
 </br>
