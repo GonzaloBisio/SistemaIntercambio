@@ -1,6 +1,8 @@
 # DREAM TRIP
 
 En éste proyecto, se busca hacer una red de sistemas de intercambios culturales, de viajes por profesión o por simple gusto. La idea es ser intermediarios entre el host o la persona que aloja y el viajero. Por medio de una solicitud la cual se manda al mail de la empresa, nos muestra gustos y destinos del viajero para conectarlo con su mejor destino y alojamiento.
+![]()
+
 
 ## Proyecto!!
 
@@ -11,6 +13,20 @@ En éste proyecto, se busca hacer una red de sistemas de intercambios culturales
 - :briefcase:	Y muchos Programas mas a descubrir!!!
 
 <br />
+
+
+### Instalacion
+
+#### Descarga de archivos de repositorio
+
+Ejecutar los siguientes comandos en terminal
+```
+git init
+
+git clone https://github.com/cettipao/ProyectoFinal.git
+```
+
+</br>
 
 ### Languages and Tools:
 
@@ -44,16 +60,7 @@ En éste proyecto, se busca hacer una red de sistemas de intercambios culturales
 pip install -r requirements.txt
 ```
 
-### Instalacion
 
-#### Descarga de archivos de repositorio
-
-Ejecutar los siguientes comandos en terminal
-```
-git init
-
-git clone https://github.com/cettipao/ProyectoFinal.git
-```
 ---
 
 
