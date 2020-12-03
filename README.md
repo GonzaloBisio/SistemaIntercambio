@@ -57,7 +57,7 @@ git clone https://github.com/GonzaloBisio/SistemaIntercambio.git
 | django-crispy-forms|
 
 
-* **To install requirements.txt** in a virtualenv:
+* **Instalar requirements.txt** en la virtualenv:
 ```bash
 pip install -r requirements.txt
 ```
