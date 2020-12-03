@@ -10,7 +10,6 @@ class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(max_length=60, help_text='Requisito. Añadir email válido')
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirm Contraseña', widget=forms.PasswordInput)
-
     class Meta: 
         model = User
         fields = ['username','email','password1','password2']
