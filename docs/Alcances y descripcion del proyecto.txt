@@ -1,6 +1,0 @@
-	En éste proyecto se trata de imitar a un sistema de intercambios culturales, de viajes por profesión o por gusto propio. El proyecto cuenta con una base de datos propia, en la cual se registran los usuarios interesados en viajar, pasan por el login y eligen el programa en el que quieran inscribirse, de ahí en más pasan a comunicarse el viajante con el receptor, que previamente tiene que haberse registrado e indicado la capacidad de alojamiento que posee.
-	El proyecto cuenta con un blog en el cual cada persona que viaje puede hacer una reseña sobre el mismo, indicando fidelidad y un viaje seguro previamente hablado con el hospedador. La página principal del proyecto muestra al cliente la variedad de opciones disponibles, el blog y su propio perfil.
-	Éste proyecto cuenta con una restriccion de plazo dictaminada por nuestros profesores de programación con fecha límite el 30 de noviembre de 2020, iniciandolo un mes previo a su entrega. Ésto no excluye que se puedan hacer futuros cambios en el mismo.
-	El producto final va a ser adaptado ante las necesidades de los clientes y el uso del mismo, con tal de llegar a alcanzar la satisfacción del cliente.
-	
-
