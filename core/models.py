@@ -41,20 +41,9 @@ class UserForm(forms.ModelForm):
         fields = ['password1']
         widgets = {'password1': forms.PasswordInput(),}
 
-class RegisterHost(RegisterTraveller):
-    disponibilidad = models.IntegerField(default=0)
-
-class Programa(models.Model):
-    regist = models.ForeignKey('RegisterTraveller',on_delete=models.CASCADE, null=False)
-    opciones = models.CharField( 
-        max_length = 20, 
-        choices = TRAVEL_CHOICES, 
-        default = '-'
-        )
-
+        
 class Solicitud(models.Model):
     Viajante = models.ForeignKey('RegisterTraveller',on_delete=models.CASCADE, null=False, related_name='%(class)s_viajante')
-    Hospedador = models.ForeignKey('RegisterHost',on_delete=models.CASCADE, null=False, related_name='%(class)s_hospedador')
    
     estad = models.CharField( 
         max_length = 20, 

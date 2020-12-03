@@ -198,7 +198,8 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="http://127.0.0.1:8000/index/" method="POST">
+        {% csrf_token %}
         <div class="banner">
           <h1>Solicitud</h1>
         </div>
@@ -232,7 +233,7 @@
           </div>
           <div class="item">
             <p>Seleccione pais al cual desea postularse:</p>
-            <select for="zip">
+            <select for="zip" name="pais">
                 <option value="Paris">Paris</option>
                 <option value="Italia">Italia</option>
                 <option value="EEUU">EEUU</option>
@@ -246,11 +247,11 @@
           <label>Seleccione registro</label>
           <div class="question-answer">
             <div>
-              <input type="radio" value="none" id="radio_1" name="info"/>
+              <input type="radio" value="viajero" id="radio_1" name="info"/>
               <label for="radio_1" class="radio"><span>Viajero</span></label>
             </div>
             <div>
-              <input  type="radio" value="none" id="radio_2" name="info"/>
+              <input  type="radio" value="host" id="radio_2" name="info"/>
               <label for="radio_2" class="radio"><span>Host</span></label>
             </div>
           </div>
@@ -288,14 +289,10 @@
         
         </div>
         <div class="btn-block">
-          <button onclick="volver()" type="submit" href="/">Submit</button>
+          <button type="submit" >Enviar</button>
+          <a href="mailto:t.suarez2003@gmail.com">Clicka para enviar email a un destinatario</a>
         </div>
       </form>
     </div>
   </body>
-  <script>
-      function volver(){
-        window.location.href = "http://127.0.0.1:8000/index"
-      }
-  </script>
 </html>
