@@ -28,6 +28,6 @@ class CustomUserAdmin(UserAdmin):
     
 
 
-admin.site.register(RegisterTraveller,RegisterTravellerAdmin)
+admin.site.register(RegisterTraveller)
 admin.site.register(Solicitud)
-admin.site.register(Profile)
+

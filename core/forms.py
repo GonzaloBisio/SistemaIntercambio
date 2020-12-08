@@ -4,15 +4,17 @@ from django.contrib.auth.models import User
 
 from django.core.mail import EmailMultiAlternatives
 
-from core.models import RegisterTraveller
 
 class UserRegisterForm(UserCreationForm):
+    first_name = forms.CharField(max_length=32,label='Nombre')
+    last_name = forms.CharField(max_length=32, label='Apellido')
     email = forms.EmailField(max_length=60, help_text='Requisito. Añadir email válido')
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirm Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Confirmar Contraseña', widget=forms.PasswordInput)
+
     class Meta: 
         model = User
-        fields = ['username','email','password1','password2']
+        fields = ['username','email','password1','password2','first_name','last_name']
         help_texts = {k:"" for k in fields}
 
     

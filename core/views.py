@@ -12,6 +12,7 @@ from django.contrib import messages
 
 # Create your views here.
 
+
 def index (request):
     if request.method == "POST":
         if "pais" in request.POST:
@@ -58,3 +59,8 @@ def perfil (request):
 
 def solicitud (request):
     return render (request, "core/solicitud.html")
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')     
