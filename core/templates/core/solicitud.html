@@ -200,6 +200,7 @@
     <div class="testbox">
       <form action="http://127.0.0.1:8000/index/" method="POST">
         {% csrf_token %}
+        {{form.as_p}}
         <div class="banner">
           <h1>Solicitud</h1>
         </div>
@@ -284,7 +285,7 @@
         </div>
         <div class="item">
           <label for="visit">Comentarios:</label>
-          <textarea id="visit" rows="3"></textarea>
+          <textarea id="visit" rows="3" name="coment"></textarea>
         </div>
         
         </div>

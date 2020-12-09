@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+from django.forms import ModelForm
 from django.core.mail import EmailMultiAlternatives
-
+from .models import *
 
 class UserRegisterForm(UserCreationForm):
     first_name = forms.CharField(max_length=32,label='Nombre')
@@ -14,7 +14,13 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta: 
         model = User
-        fields = ['username','email','password1','password2','first_name','last_name']
+        fields = ('username','email','password1','password2','first_name','last_name', )
         help_texts = {k:"" for k in fields}
 
     
+class Solicitud(ModelForm):
+    class Meta:
+        model = Solicitud
+        fields = ( 'telefono', 'ciudad', 'pais','nombre', 'email',)
+
+form = Solicitud()

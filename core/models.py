@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-Estado_soli = [
+Estado_solic = [
     ('NA', 'No Aprobado'),
     ('A', 'Aprobado'),
 ]
@@ -16,16 +16,16 @@ class RegisterTraveller(models.Model):
     apellido = models.CharField(max_length=50)
     email = models.CharField(max_length=60, unique=True)
     
-
 class Solicitud(models.Model):
-    viajante = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
-    estado = models.CharField(max_length = 20,choices = Estado_soli, default = 'NA')
-    telefono = models.IntegerField(null= False)
+    estado = models.CharField(max_length=50, choices=Estado_solic, default='NA')
+    telefono = models.IntegerField(null= False )
     pais = models.CharField(max_length=50, default='')
     ciudad = models.CharField(max_length=50,default='')
-    edad = models.IntegerField(null= False )
-    nombre = models.CharField(max_length=50, default='')
+    nombre = models.CharField(max_length=50, default='', null=False)
     apellido = models.CharField(max_length=50, default='')
+    email = models.CharField(max_length=60, unique=True, default='')
+    actividad = models.CharField(max_length=50,default='')
+    info = models.CharField(max_length=50,default='')
 
 class Destino(models.Model):
     pais = models.CharField(max_length=20, default='')
