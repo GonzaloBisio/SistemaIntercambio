@@ -14,20 +14,20 @@ Activity = [
 
 class RegisterTraveller(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    codigo = models.CharField(max_length=50)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     email = models.CharField(max_length=60, unique=True)
     
 class Solicitud(models.Model):
-    aprobado = models.BooleanField(default=0)
+    perfil = models.ForeignKey(RegisterTraveller, on_delete=models.CASCADE, null=True)
+    aprobado = models.BooleanField(default= 0)
     actividad = models.CharField(max_length=50, choices=Activity, default='T')
     telefono = models.IntegerField(null= False )
     pais = models.CharField(max_length=50, default='')
     ciudad = models.CharField(max_length=50,default='')
     nombre = models.CharField(max_length=50, default='', null=False)
     apellido = models.CharField(max_length=50, default='')
-    email = models.CharField(max_length=60, unique=True, default='')
+    email = models.CharField(max_length=60, unique=False, default='')
     actividad = models.CharField(max_length=50,default='')
     info = models.CharField(max_length=50,default='')
     

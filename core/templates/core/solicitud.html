@@ -209,12 +209,20 @@
         <br/>
         <div class="colums">
           <div class="item">
+            <label for="name">Usuario<span>*</span></label>
+            <input id="name" type="text" name="name" value="{{user.username}}" required/>
+          </div>
+          <div class="item">
             <label for="name">Nombre<span>*</span></label>
-            <input id="name" type="text" name="name" value="{{user.username}} " required/>
+            <input id="name" type="text" name="nombre" value="{{nom.nombre}}" required/>
+          </div>
+          <div class="item">
+            <label for="name">Apellido<span>*</span></label>
+            <input id="name" type="text" name="apellido" value="{{nom.apellido}}" required/>
           </div>
           <div class="item">
             <label for="eaddress">Email<span>*</span></label>
-            <input id="eaddress" type="text"   name="eaddress" required/>
+            <input id="eaddress" type="text"   name="eaddress" value="{{nom.email}}" required/>
           </div>
           <div class="item">
             <label for="phone">Telefono<span>*</span></label>
@@ -235,7 +243,6 @@
           <div class="item">
             <p>Seleccione pais al cual desea postularse:</p>
             <select for="zip" name="pais" >
-                <option value="Paris">Paris</option>
                 <option value="Italia">Italia</option>
                 <option value="EEUU">EEUU</option>
                 <option value="Mexico">Mexico</option>
@@ -291,7 +298,6 @@
         </div>
         <div class="btn-block">
           <button type="submit" >Enviar</button>
-          <a href="mailto:t.suarez2003@gmail.com">Clicka para enviar email a un destinatario</a>
         </div>
       </form>
     </div>

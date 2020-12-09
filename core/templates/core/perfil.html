@@ -29,14 +29,21 @@
 
                 <div id="per_1">
                     <h2 style="color: antiquewhite;"> Usuario: {{user.username}}</h2>
-                    <h2 style="color: antiquewhite;"> Nombre: {{user.first_name}}</h2>
-                    <h2 style="color: antiquewhite;"> Apellido: {{user.last_name}}</h2><br>
-                    <h2 style="color: antiquewhite;"> Solicitudes : {{Solicitudes.estado}}</h2>
+                    <h2 style="color: antiquewhite;"> Nombre: {{nom.nombre}}</h2>
+                    <h2 style="color: antiquewhite;"> Apellido: {{nom.apellido}}</h2><br>
+                    <h2 style="color: antiquewhite;"> Solicitudes : <br>{%for s in solis %} 
+                    · {{s.pais}} - {{s.actividad}}   <br> {%endfor %} </h2>
+
                 </div>
                 <a href="http://127.0.0.1:8000/index/" type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Volver </a><br>
-                <a href="login.html" type="submit" onclick="logout()" class="btn btn-primary" ><i class="fas fa-sign-in-alt"></i>  Logout </a><br>
+                
+                <a type="submit" onclick="logout()" class="btn btn-primary" ><i class="fas fa-sign-in-alt"></i>  Logout </a><br>
             </div>
-            
+            <script>
+                function logout(){
+                    window.location.href = "http://127.0.0.1:8000/";
+                }
+            </script>
         </div>
     </div>
     

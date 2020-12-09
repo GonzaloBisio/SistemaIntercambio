@@ -6,25 +6,25 @@ from .models import *
 # Register your models here.
 
 class RegisterTravellerAdmin(admin.ModelAdmin):
-    list_display = ('usuario','codigo', 'nombre','apellido','email')
-    search_fields = ['nombre','apellido','codigo']
+    list_display = ('usuario', 'nombre','apellido','email')
+    search_fields = ['nombre','apellido',]
     fieldsets = (
+        ("Usuario", {
+            'fields': ('usuario',)
+        }),
         ("Persona", {
             'fields': ('nombre', 'apellido','email',)
-        }),
-        ("Codigo", {
-            'fields': ('codigo',)
         }),
     )
 
 
 class SolicitudAdmin(admin.ModelAdmin):
-    list_display = ('aprobado','telefono', 'pais','ciudad','nombre','apellido','email','actividad','info',)
+    list_display = ('aprobado','perfil','telefono', 'pais','ciudad','nombre','apellido','email','actividad','info',)
     search_fields = ['nombre','apellido','pais']
     list_filter = ('aprobado',)
     fieldsets = (
         ("Aprobacion", {
-            'fields': ('aprobado',)
+            'fields': ('aprobado','perfil')
         }),
         ("Persona", {
             'fields': ('nombre', 'apellido','telefono',)

@@ -16,6 +16,8 @@ from django.contrib import messages
 
 
 def index (request):
+    perf = request.user
+    nom = RegisterTraveller.objects.get(usuario = perf)
     if request.method == "POST":
         if "pais" in request.POST:
             nombre = request.POST["name"]
@@ -30,7 +32,10 @@ def index (request):
             email_from = settings.EMAIL_HOST_USER
             recipient_list = ["dreamtripgt@gmail.com"]
             send_mail(subject, message, email_from, recipient_list)
-            ins = SoliModel.objects.create(nombre=nombre, email=email,telefono=telefono ,ciudad=ciudad ,actividad=actividad ,info=info ,pais=pais )
+            print (nombre)
+            obj_perf = User.objects.get(username = nombre)
+            obj_reg = RegisterTraveller.objects.get(usuario =obj_perf )
+            ins = SoliModel.objects.create(perfil= obj_reg ,nombre=nombre, email=email,telefono=telefono ,ciudad=ciudad ,actividad=actividad ,info=info  )
             ins.save()
             print("datos cargados")
         else:
@@ -42,7 +47,7 @@ def index (request):
             email_from = settings.EMAIL_HOST_USER
             recipient_list = ["dreamtripgt@gmail.com"]
             send_mail(subject, message, email_from, recipient_list)
-    return render (request, "core/index.html")
+    return render (request, "core/index.html", {'perf': perf , 'nom': nom})
 
 def login (request):
     messages.success(request, f'Te has deslogeado... Adios {username} ')
@@ -57,10 +62,10 @@ def register (request):
             nombre = request.POST["first_name"]
             apellido = request.POST["last_name"]
             email = request.POST["email"]
-            inst = Regi.objects.create(nombre=nombre, email=email,apellido=apellido )
-            inst.save()
             form.save()
             username = form.cleaned_data['username']
+            inst = Regi.objects.create(usuario=User.objects.get(username = usuario) ,nombre=nombre, email=email, apellido=apellido )
+            inst.save() 
             messages.success(request, f'Usuario {username} creado')
             return redirect('login')
     else:
@@ -69,8 +74,13 @@ def register (request):
     return render (request, "core/register.html", context)
     
 def perfil (request):
-    perf = RegisterTraveller.objects.all()
-    return render (request, "core/perfil.html",{'perf': perf})
+    perf = request.user
+    nom = RegisterTraveller.objects.get(usuario = perf)
+    solis = Solicitud.objects.filter(perfil= nom) 
+    return render (request, "core/perfil.html",{'perf': perf , 'solis': solis, 'nom': nom})
 
 def solicitud (request):
-    return render (request, "core/solicitud.html")
+    perf = request.user
+    nom = RegisterTraveller.objects.get(usuario = perf)
+    
+    return render (request, "core/solicitud.html", {'perf': perf , 'nom': nom})
