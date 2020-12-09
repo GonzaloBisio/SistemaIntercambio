@@ -4,11 +4,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-Estado_solic = [
-    ('NA', 'No Aprobado'),
-    ('A', 'Aprobado'),
-]
-
 Activity = [
     ('I', 'Idiomas'),
     ('F', 'Financias'),
@@ -25,7 +20,7 @@ class RegisterTraveller(models.Model):
     email = models.CharField(max_length=60, unique=True)
     
 class Solicitud(models.Model):
-    estado = models.CharField(max_length=50, choices=Estado_solic, default='NA')
+    aprobado = models.BooleanField(default=0)
     actividad = models.CharField(max_length=50, choices=Activity, default='T')
     telefono = models.IntegerField(null= False )
     pais = models.CharField(max_length=50, default='')
@@ -35,13 +30,10 @@ class Solicitud(models.Model):
     email = models.CharField(max_length=60, unique=True, default='')
     actividad = models.CharField(max_length=50,default='')
     info = models.CharField(max_length=50,default='')
-
-class Destino(models.Model):
-    pais = models.CharField(max_length=20, default='')
-    estado = models.CharField(max_length=20, default='')
-    domicilio = models.CharField(max_length=20, default='')
-
-
     
+class Destiny(models.Model):
+    destino = models.CharField(max_length=50,default='')
+    ciudad = models.CharField(max_length=50,default='')
+    domicilio = models.CharField(max_length=50,default='')
 
 
