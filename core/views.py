@@ -47,7 +47,7 @@ def index (request):
             email_from = settings.EMAIL_HOST_USER
             recipient_list = ["dreamtripgt@gmail.com"]
             send_mail(subject, message, email_from, recipient_list)
-    return render (request, "core/index.html", {'perf': perf , 'nom': nom})
+    return render (request, "core/index.html", {'perf': perf , 'nom': nom.nombre})
 
 def login (request):
     messages.success(request, f'Te has deslogeado... Adios {username} ')
@@ -82,5 +82,5 @@ def perfil (request):
 def solicitud (request):
     perf = request.user
     nom = RegisterTraveller.objects.get(usuario = perf)
-    
-    return render (request, "core/solicitud.html", {'perf': perf , 'nom': nom})
+    paises = Destiny.objects.all()
+    return render (request, "core/solicitud.html", {'perf': perf , 'nom': nom , 'paises': paises})

@@ -243,12 +243,11 @@
           <div class="item">
             <p>Seleccione pais al cual desea postularse:</p>
             <select for="zip" name="pais" >
-                <option value="Italia">Italia</option>
-                <option value="EEUU">EEUU</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Nueva zelanda">Nueva zelanda</option>
-                <option value="Alemania">Alemania</option>
+              {% for pais in paises%}
+                <option value="{{pais.destino}}">{{pais.destino}}</option>
+              {%endfor%}
             </select>
+
           </div>
         </div>
         <div class="question">
