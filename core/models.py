@@ -9,6 +9,14 @@ Estado_solic = [
     ('A', 'Aprobado'),
 ]
 
+Activity = [
+    ('I', 'Idiomas'),
+    ('F', 'Financias'),
+    ('M', 'Musica'),
+    ('T', 'Turismo'),
+    ('G', 'Guia'),
+]
+
 class RegisterTraveller(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     codigo = models.CharField(max_length=50)
@@ -18,6 +26,7 @@ class RegisterTraveller(models.Model):
     
 class Solicitud(models.Model):
     estado = models.CharField(max_length=50, choices=Estado_solic, default='NA')
+    actividad = models.CharField(max_length=50, choices=Activity, default='T')
     telefono = models.IntegerField(null= False )
     pais = models.CharField(max_length=50, default='')
     ciudad = models.CharField(max_length=50,default='')
