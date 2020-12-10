@@ -230,7 +230,7 @@
           </div>
           <div class="item">
             <label for="street">Domicilio<span>*</span></label>
-            <input id="street" type="text"   name="street" required/>
+            <input id="street" type="text"   name="street"  required/>
           </div>
           <div class="item">
             <label for="city">Ciudad<span>*</span></label>
@@ -241,10 +241,10 @@
             <input id="state" type="text"   name="state" required/>
           </div>
           <div class="item">
-            <p>Seleccione pais al cual desea postularse:</p>
+            <p>Seleccione el destino al cual desea postularse:</p>
             <select for="zip" name="pais" >
               {% for pais in paises%}
-                <option value="{{pais.destino}}">{{pais.destino}}</option>
+                <option value="{{pais.destino}}">{{pais.destino}} ({{pais.ciudad}})</option>
               {%endfor%}
             </select>
 

@@ -10,11 +10,12 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
-
+@login_required(login_url='login')
 def index (request):
     perf = request.user
     nom = RegisterTraveller.objects.get(usuario = perf)
@@ -72,13 +73,15 @@ def register (request):
             form = UserRegisterForm()
     context = {'form' : form}
     return render (request, "core/register.html", context)
-    
+
+@login_required(login_url='login')   
 def perfil (request):
     perf = request.user
     nom = RegisterTraveller.objects.get(usuario = perf)
     solis = Solicitud.objects.filter(perfil= nom) 
     return render (request, "core/perfil.html",{'perf': perf , 'solis': solis, 'nom': nom})
 
+@login_required(login_url='login')   
 def solicitud (request):
     perf = request.user
     nom = RegisterTraveller.objects.get(usuario = perf)

@@ -30,7 +30,6 @@ class Solicitud(models.Model):
     nombre = models.CharField(max_length=50, default='', null=False)
     apellido = models.CharField(max_length=50, default='')
     email = models.CharField(max_length=60, unique=False, default='')
-    actividad = models.CharField(max_length=50,default='')
     info = models.CharField(max_length=50,default='')
     
 
@@ -39,6 +38,6 @@ class Destiny(models.Model):
     destino = models.CharField(max_length=50,default='')
     ciudad = models.CharField(max_length=50,default='')
     domicilio = models.CharField(max_length=50,default='')
-    
+
 
 
