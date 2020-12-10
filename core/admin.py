@@ -19,7 +19,7 @@ class RegisterTravellerAdmin(admin.ModelAdmin):
 
 
 class SolicitudAdmin(admin.ModelAdmin):
-    list_display = ('aprobado','perfil','telefono', 'pais','ciudad','nombre','apellido','email','actividad','info',)
+    list_display = ('aprobado','perfil','telefono', 'pais','ciudad','actividad','nombre','apellido','email','info',)
     search_fields = ['nombre','apellido','pais']
     list_filter = ('aprobado',)
     fieldsets = (
@@ -34,6 +34,9 @@ class SolicitudAdmin(admin.ModelAdmin):
         }),
         ("Region", {
             'fields': ('pais','ciudad',)
+        }),
+        ("Actividades",{
+            'fields':('actividad',)
         }),
     )
 
@@ -50,9 +53,16 @@ class CustomUserAdmin(UserAdmin):
     add_form = UserCreationForm
     form = UserChangeForm
     
-
-
+class ActividadAdmin(admin.ModelAdmin):
+    list_display = ('actividad',)
+    fieldsets=(
+        ("Actividades",{
+            'fields':('actividad',)
+        }),
+    )
+        
 
 admin.site.register(RegisterTraveller, RegisterTravellerAdmin)
 admin.site.register(Solicitud, SolicitudAdmin)
 admin.site.register(Destiny, DestinyAdmin)
+admin.site.register(Actividad, ActividadAdmin)

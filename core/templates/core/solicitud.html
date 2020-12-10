@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Volunteer Sign up form</title>
+    <title>solicitud DTrip</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
@@ -234,7 +234,7 @@
           </div>
           <div class="item">
             <label for="city">Ciudad<span>*</span></label>
-            <input id="city" type="text"   name="city" required/>
+            <input id="city" type="text"   name="city"  required/>
           </div>
           <div class="item">
             <label for="state">Estado<span>*</span></label>
@@ -264,29 +264,12 @@
           </div>
         </div>
           <div class="question">
-            <label>Actividades</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="Idiomas" id="radio_10" name="activity"/>
-                <label for="radio_10" class="radio"><span>Idiomas</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="Finanzas" id="radio_11" name="activity"/>
-                <label for="radio_11" class="radio"><span>Finanzas</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="Musica" id="radio_12" name="activity"/>
-                <label for="radio_12" class="radio"><span>Musica</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="Turismo" id="radio_13" name="activity"/>
-                <label for="radio_13" class="radio"><span>Turismo</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="Guia" id="radio_14" name="activity"/>
-                <label for="radio_14" class="radio"><span>Guia</span></label>
-              </div>
-            </div>
+            <p>Seleccione Activadad por la que viaja:</p>
+            <select for="zip" name="actividad" >
+              {% for a in act%}
+                <option value="{{a.actividad}}">{{a.actividad}} </option>
+              {%endfor%}
+            </select>
           </div>
         </div>
         <div class="item">
